@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
     if (historyData) {
-    console.log(historyData);
+      console.log(historyData);
       const { domainKeywords } = await fetchDomainKeywords();
 
       // 按域名访问次数聚合
@@ -82,6 +82,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         ([keyword, count]) => `<li>${keyword}: ${count} times</li>`
       ).join('');
       resultsContainer.innerHTML = `<ul>${resultHTML}</ul>`;
+
+      // 找到没有匹配到关键词的域名
+      const unmatchedDomains = Object.keys(domainCounts).filter(domain => !domainKeywords[domain]);
+
+      // 显示没有匹配到关键词的域名
+      const unmatchedHTML = unmatchedDomains.length > 0 ? '<h3>Unmatched Domains:</h3><ul>' + unmatchedDomains.map(domain => `<li>${domain}</li>`).join('') + '</ul>' : '';
+
+      resultsContainer.innerHTML += unmatchedHTML;
     } else {
       resultsContainer.innerHTML = 'No history data available.';
     }
