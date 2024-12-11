@@ -25,9 +25,14 @@ document.getElementById('fetch-history').addEventListener('click', async () => {
             domainMap[monthKey][domain]++;
         });
     }
-    debugger;
     // Save the result to local storage
     await chrome.storage.local.set({ historyData: domainMap });
+    chrome.windows.create({
+      url: 'result.html',
+      type: 'popup',
+      width: 800,
+      height: 600
+    });
   } catch (error) {
     console.error(`Error fetching history: ${error.message}`);
   }
