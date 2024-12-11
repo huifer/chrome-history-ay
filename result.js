@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const resultsContainer = document.getElementById('result');
   const chartContainer = document.getElementById('chart');
+  const wordCloudContainer = document.getElementById('wordCloud');
 
   // 读取 domainkey.json 文件中的关键词数据
   async function fetchDomainKeywords() {
@@ -10,8 +11,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // 获取并处理浏览记录数据
   chrome.storage.local.get('historyData', async ({ historyData }) => {
-
-
     if (historyData) {
       console.log(historyData);
       const { domainKeywords } = await fetchDomainKeywords();
@@ -39,13 +38,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         .sort(([, countA], [, countB]) => countB - countA)
         .slice(0, 10);
 
-      // 转换为 ECharts 数据格式
+      // 转换为 ECharts 数据格式（用于饼图）
       const chartData = sortedKeywords.map(([keyword, count]) => ({
         name: keyword,
         value: count
       }));
 
-      // 初始化 ECharts
+      // 初始化 ECharts 饼图
       const chart = echarts.init(chartContainer);
       const chartOptions = {
         title: {
