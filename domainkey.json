@@ -1,20 +1,28 @@
 {
-    "domainKeywords": {
-      "google.com": ["search engine", "email", "maps"],
-      "facebook.com": ["social media", "friends", "messaging"],
-      "youtube.com": ["videos", "streaming", "entertainment"],
-      "twitter.com": ["microblogging", "hashtags", "news"],
-      "amazon.com": ["shopping", "e-commerce", "deals"],
-      "wikipedia.org": ["encyclopedia", "knowledge", "education"],
-      "netflix.com": ["streaming", "movies", "series"],
-      "github.com": ["coding", "repositories", "version control"],
-      "reddit.com": ["forums", "discussion", "communities"],
-      "linkedin.com": ["professional", "networking", "jobs"],
-      "bing.com": ["search engine", "web search", "images"],
-      "ebay.com": ["auctions", "shopping", "deals"],
-      "pinterest.com": ["ideas", "images", "inspiration"],
-      "quora.com": ["questions", "answers", "knowledge"],
-      "instagram.com": ["photos", "social media", "stories"]
-    }
+  "domainKeywords": {
+    "google.com": ["search engine", "web search", "online tools"],
+    "facebook.com": ["social media", "friends", "community interactions"],
+    "youtube.com": ["video platform", "streaming", "content creators"],
+    "twitter.com": ["microblogging", "hashtags", "real-time updates"],
+    "amazon.com": ["e-commerce", "online shopping", "global marketplace"],
+    "wikipedia.org": ["encyclopedia", "free knowledge", "crowdsourced articles"],
+    "netflix.com": ["streaming", "movies", "original series"],
+    "github.com": ["coding", "repositories", "open-source projects"],
+    "reddit.com": ["forums", "discussion threads", "user-generated content"],
+    "linkedin.com": ["professional network", "career development", "job searching"],
+    "bing.com": ["search engine", "image search", "web exploration"],
+    "ebay.com": ["online marketplace", "auctions", "consumer goods"],
+    "pinterest.com": ["image sharing", "creative inspiration", "DIY ideas"],
+    "quora.com": ["question-and-answer", "knowledge exchange", "community insights"],
+    "instagram.com": ["photo sharing", "social media", "visual storytelling"],
+    "baidu.com": ["search engine", "Chinese web search", "knowledge hub"],
+    "taobao.com": ["online shopping", "e-commerce", "China marketplace"],
+    "weibo.com": ["social media", "microblogging", "Chinese community"],
+    "tencent.com": ["social networking", "gaming", "technology"],
+    "jd.com": ["e-commerce", "online retail", "consumer electronics"],
+    "douyin.com": ["short videos", "entertainment", "viral content"],
+    "qq.com": ["social media", "messaging", "gaming platform"],
+    "ximalaya.com": ["audio content", "podcasts", "online radio"],
+    "zhihu.com": ["question-and-answer", "knowledge sharing", "Chinese forum"]
   }
-  
+}

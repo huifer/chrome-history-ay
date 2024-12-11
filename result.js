@@ -10,7 +10,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // 获取并处理浏览记录数据
   chrome.storage.local.get('historyData', async ({ historyData }) => {
+
+
     if (historyData) {
+    console.log(historyData);
       const { domainKeywords } = await fetchDomainKeywords();
 
       // 按域名访问次数聚合

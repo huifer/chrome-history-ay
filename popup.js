@@ -1,36 +1,33 @@
 document.getElementById('fetch-history').addEventListener('click', async () => {
   try {
-    const historyItems = await chrome.history.search({
-      text: '',
-      startTime: new Date('2024-01-01').getTime(),
-      endTime: new Date('2024-12-31').getTime(),
-      maxResults: 10000
-    });
-
     const domainMap = {};
-    historyItems.forEach(item => {
-      const url = new URL(item.url);
-      const domain = url.hostname;
+    for (let month = 0; month < 12; month++) {
+        const monthStart = new Date(2024, month, 1);
+        const monthEnd = new Date(2024, month + 1, 0);
 
-      const date = new Date(item.lastVisitTime);
-      const month = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+        const historyItems = await chrome.history.search({
+            text: '',
+            startTime: monthStart.getTime(),
+            endTime: monthEnd.getTime(),
+            maxResults: 100000000
+        });
 
-      if (!domainMap[month]) domainMap[month] = {};
-      if (!domainMap[month][domain]) domainMap[month][domain] = 0;
+        historyItems.forEach(item => {
+            const url = new URL(item.url);
+            const domain = url.hostname;
 
-      domainMap[month][domain]++;
-    });
+            const date = new Date(item.lastVisitTime);
+            const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
 
+            if (!domainMap[monthKey]) domainMap[monthKey] = {};
+            if (!domainMap[monthKey][domain]) domainMap[monthKey][domain] = 0;
+
+            domainMap[monthKey][domain]++;
+        });
+    }
+    debugger;
     // Save the result to local storage
     await chrome.storage.local.set({ historyData: domainMap });
-
-    // Open a new window to display the results
-    chrome.windows.create({
-      url: 'result.html',
-      type: 'popup',
-      width: 800,
-      height: 600
-    });
   } catch (error) {
     console.error(`Error fetching history: ${error.message}`);
   }
