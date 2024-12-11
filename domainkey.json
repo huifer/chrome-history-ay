@@ -1,0 +1,20 @@
+{
+    "domainKeywords": {
+      "google.com": ["search engine", "email", "maps"],
+      "facebook.com": ["social media", "friends", "messaging"],
+      "youtube.com": ["videos", "streaming", "entertainment"],
+      "twitter.com": ["microblogging", "hashtags", "news"],
+      "amazon.com": ["shopping", "e-commerce", "deals"],
+      "wikipedia.org": ["encyclopedia", "knowledge", "education"],
+      "netflix.com": ["streaming", "movies", "series"],
+      "github.com": ["coding", "repositories", "version control"],
+      "reddit.com": ["forums", "discussion", "communities"],
+      "linkedin.com": ["professional", "networking", "jobs"],
+      "bing.com": ["search engine", "web search", "images"],
+      "ebay.com": ["auctions", "shopping", "deals"],
+      "pinterest.com": ["ideas", "images", "inspiration"],
+      "quora.com": ["questions", "answers", "knowledge"],
+      "instagram.com": ["photos", "social media", "stories"]
+    }
+  }
+  
